@@ -6,7 +6,7 @@ CHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/vers
 if [[ "${AUTO_UPDATE}" == "1" ]] || [[ "${AUTO_UPDATE}" == "0" ]]; then
     DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.latest_download')
 
-    rm -r /home/container/alpine
+    rm -rf /home/container/alpine
 
     echo -e "Downloading latest version of FiveM..."
 
@@ -19,14 +19,6 @@ fi
 if [[ "${AUTO_UPDATE}" == "0" ]] || [[ "${AUTO_UPDATE}" == "1" ]]; then
     echo -e "Not downloading latest version of FiveM..."
 fi
-
-
-if [[ "${CHANGELOGS}" == true ]] || [[ "${CHANGELOGS}" == TRUE ]]; then
-    echo -e "Showing changelogs..."
-    echo -e "${CHANGELOGS_PAGE}"
-fi
-
-
 ## Run the Server
 
 echo -e "Starting FiveM Server..."
