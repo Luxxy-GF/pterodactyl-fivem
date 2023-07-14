@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "hi"
-echo "${AUTO_UPDATE}"
 RELEASE_PAGE=$(curl -sSL https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/)
 CHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/versions/linux/server)
 
@@ -20,14 +19,7 @@ if [[ "${AUTO_UPDATE}" == "1" ]]; then
 else 
     echo -e "Using local version of FiveM... not downloading latest."
 fi
-## Run the Server
 
 echo -e "Starting FiveM Server..."
 
 $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/" -- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir $(pwd)/alpine/opt/cfx-server/citizen/ +set serverProfile default +set txAdminPort ${TXADMIN_PORT}
-
-
-
-
-
-
