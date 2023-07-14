@@ -3,7 +3,7 @@
 RELEASE_PAGE=$(curl -sSL https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/)
 CHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/versions/linux/server)
 
-if [[ "${AUTO_UPDATE}" == true ]] || [[ "${AUTO_UPDATE}" == TRUE ]]; then
+if [[ "${AUTO_UPDATE}" == "1" ]] || [[ "${AUTO_UPDATE}" == "0" ]]; then
     DOWNLOAD_LINK=(echo "${RELEASE_PAGE}" | jq -r '.latest_download')
 
     rm -r /home/container/alpine
@@ -16,7 +16,7 @@ if [[ "${AUTO_UPDATE}" == true ]] || [[ "${AUTO_UPDATE}" == TRUE ]]; then
     rm -rf ${DOWNLOAD_LINK##*/} run.sh
 fi
 
-if [[ "${AUTO_UPDATE}" == false ]] || [[ "${AUTO_UPDATE}" == FALSE ]]; then
+if [[ "${AUTO_UPDATE}" == "0" ]] || [[ "${AUTO_UPDATE}" == "1" ]]; then
     echo -e "Not downloading latest version of FiveM..."
 fi
 
