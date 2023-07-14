@@ -16,10 +16,8 @@ if [[ "${AUTO_UPDATE}" == "1" ]] || [[ "${AUTO_UPDATE}" == "0" ]]; then
     echo "Extracting fivem files"
     tar -xvf ${DOWNLOAD_LINK##*/}
     rm -rf ${DOWNLOAD_LINK##*/} run.sh
-fi
-
-if [[ "${AUTO_UPDATE}" == "0" ]] || [[ "${AUTO_UPDATE}" == "1" ]]; then
-    echo -e "Not downloading latest version of FiveM..."
+else 
+    echo -e "Using local version of FiveM... not downloading latest."
 fi
 ## Run the Server
 
