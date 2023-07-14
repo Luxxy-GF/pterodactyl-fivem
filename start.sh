@@ -6,7 +6,7 @@ CHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/vers
 
 echo -e "Checking for latest version of FiveM..."
 
-if [[ "${AUTO_UPDATE}" == "1" ]] || [[ "${AUTO_UPDATE}" == "0" ]]; then
+if [[ "${AUTO_UPDATE}" == "1" ]]; then
     DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.latest_download')
 
     rm -rf /home/container/alpine
