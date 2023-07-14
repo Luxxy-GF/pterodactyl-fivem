@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "hi"
+echo "${AUTO_UPDATE}"
 RELEASE_PAGE=$(curl -sSL https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/)
 CHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/versions/linux/server)
 
