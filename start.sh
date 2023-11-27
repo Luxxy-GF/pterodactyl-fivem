@@ -12,7 +12,7 @@ if [[ "${AUTO_UPDATE}" == "1" ]]; then
 
     echo -e "Downloading latest version of FiveM..."
 
-    curl -sSL https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/6919-341719dd9d72996d7b2733829622ac3f76436e3e/fx.tar.xz -o ${DOWNLOAD_LINK##*/}
+    curl -sSL ${DOWNLOAD_LINK} -o ${DOWNLOAD_LINK##*/}
     echo "Extracting fivem files"
     tar -xvf ${DOWNLOAD_LINK##*/}
     rm -rf ${DOWNLOAD_LINK##*/} run.sh
