@@ -1,9 +1,13 @@
 #!/bin/bash
-echo "hi"
+## Make Colorful text for the console
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+echo -e "${GREEN}Starting Pterodactyl fivem this may take a while..${NC}"
 RELEASE_PAGE=$(curl -sSL https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/)
 CHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/versions/linux/server)
-
-echo -e "Checking for latest version of FiveM..."
+echo -e "${GREEN}Starting FiveM Server...${NC}"
 
 if [[ "${AUTO_UPDATE}" == "1" ]]; then
     DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.latest_download')
@@ -20,6 +24,7 @@ else
     echo -e "Using local version of FiveM... not downloading latest."
 fi
 
-echo -e "Starting FiveM Server..."
-
+echo -e "${GREEN}Starting FiveM Binary...${NC} Have Fun!"
+echo -e "${RED}If you have any issues please contact us on discord: https://discord.gg/pterodactyl${NC}"
+echo -e "${RED} Github: Luxxy-GF | Discord: LuxxyWasTaken${NC}"
 $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/" -- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir $(pwd)/alpine/opt/cfx-server/citizen/ +set serverProfile default +set txAdminPort ${TXADMIN_PORT}
