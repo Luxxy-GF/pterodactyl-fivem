@@ -28,7 +28,7 @@ Ports required to run the server in a table format. You only need the txAdmin po
 
 | Port | default |
 | - | - |
-| Game | 30120 |
+| FiveM | 30120 |
 | txAdmin | 40120 |
 
 ## Credits
