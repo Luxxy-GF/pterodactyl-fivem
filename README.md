@@ -14,6 +14,23 @@ This is a script to install FiveM on a Debian 13 server. It will install the lat
 1. Go to the `Startup` tab
 2. Change the `Auto Update` to the desired value (default: `1` | `0` = disabled, `1` = enabled) note: this will delete `alpine` folder and reinstall it `no data will be lost`
 
+## Notice
+
+The `FIVEM_VERSION` variable.
+
+* Defaults to `latest` which is the latest optional artifact.
+* Can be set to a specific version Ex. `7549-801114291131277b01c25158b4261df6efbbc610`.
+* If the `Auto Update` Button is turned on when you press th `Reinstall Server` button the `alpine` folder will be replaced with an updated version.
+
+## Server Ports
+
+Ports required to run the server in a table format. You only need the txAdmin port if you plan to enable txAdmin.
+
+| Port | default |
+| - | - |
+| Game | 30120 |
+| txAdmin | 40120 |
+
 ## Credits
 - [Luxxy-GF](https://github.com/Luxxy-GF) - Creator of the egg
 - [Pterodactyl](https://pterodactyl.io) - Panel used
