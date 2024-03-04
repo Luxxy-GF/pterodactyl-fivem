@@ -2,11 +2,10 @@
 
 
 ## About
-This is a script to install FiveM on a Debian 12 server. It will install the latest version of FiveM and automatically keep it updated. It will also install the latest version of FXServer.
-
+This is a script to install FiveM on a Debian 13 server. It will install the latest version of FiveM and automatically keep it updated. It will also install the latest version of FXServer.
 
 ## Installation
-1. Download the egg from the [Releases](https://github.com/Luxxy-GF/pterodactyl-fivem/releases/tag/1.0.0) 
+1. Download the egg from the [Releases](https://github.com/Luxxy-GF/pterodactyl-fivem/releases/tag/2.0.0) 
 2. Upload the egg to your panel
 3. Create a new server and select the FiveM egg
 4. Start the server and wait for it to install
@@ -20,6 +19,7 @@ This is a script to install FiveM on a Debian 12 server. It will install the lat
 - [Pterodactyl](https://pterodactyl.io) - Panel used
 - [FiveM](https://fivem.net) - Game server software used
 - [parkervcp](https://github.com/parkervcp) - Creator of the original egg
+- [ItzzSkull](https://github.com/ItzzSkull) - Co Creator of version 2 of this egg
 
 ## Support
 If you need help with this egg, you can create a issue on this repo
