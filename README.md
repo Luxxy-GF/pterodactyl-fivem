@@ -36,7 +36,6 @@ Ports required to run the server in a table format. You only need the txAdmin po
 - [Pterodactyl](https://pterodactyl.io) - Panel used
 - [FiveM](https://fivem.net) - Game server software used
 - [parkervcp](https://github.com/parkervcp) - Creator of the original egg
-- [ItzzSkull](https://github.com/ItzzSkull) - Co Creator of version 2 of this egg
 
 ## Support
 If you need help with this egg, you can create a issue on this repo
