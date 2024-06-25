@@ -10,6 +10,10 @@ RUN apt-get update && apt upgrade -y && apt-get install -y \
     pkg-config \
     tar \
     jq \
+    procps \
+    liblua5.3-0 \
+    libz-dev \
+    tzdata \
     && rm -rf /var/lib/apt/lists/*
 
 
