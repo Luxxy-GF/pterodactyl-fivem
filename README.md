@@ -44,4 +44,4 @@ If you need help with this egg, you can create an issue on this repo.
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Pull Requests
-If you want to help with this egg, you can create a pull request at [pterodactyl-fivem](https://github.com/Luxxy-GF/pterodactyl-fivem).
+If you want to help with this egg, you can create a pull request at [pterodactyl-fivem](https://github.com/Luxxy-GF/pterodactyl-fivem)..
