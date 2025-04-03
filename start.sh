@@ -29,13 +29,13 @@ fi
 
 echo -e "${Text} ${BLUE}Starting FiveM Server...${NC}"
 
-+set citizen_dir="$(pwd)/alpine/opt/cfx-server/citizen"
-+set TXHOST_MAX_SLOTS=${MAX_PLAYERS}
-+set TXHOST_TXA_PORT=${TXADMIN_PORT}
-+set TXHOST_DEFAULT_CFXKEY=${FIVEM_LICENSE}
-+set TXHOST_PROVIDER_NAME=${PROVIDER_NAME}
-+set TXHOST_PROVIDER_LOGO=${PROVIDER_LOGO}
-+set TXHOST_DATA_PATH=/home/container
+set citizen_dir="$(pwd)/alpine/opt/cfx-server/citizen"
+set TXHOST_MAX_SLOTS=${MAX_PLAYERS}
+set TXHOST_TXA_PORT=${TXADMIN_PORT}
+set TXHOST_DEFAULT_CFXKEY=${FIVEM_LICENSE}
+set TXHOST_PROVIDER_NAME=${PROVIDER_NAME}
+set TXHOST_PROVIDER_LOGO=${PROVIDER_LOGO}
+set TXHOST_DATA_PATH=/home/container
 
 $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 \
 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/" \
