@@ -47,10 +47,13 @@ if [ ! -f "$SERVER_BIN_PATH" ]; then
     exit 1
 fi
 
-# Execute the server with the necessary arguments
-echo -e "${Text} ${BLUE}Running the FiveM server...${NC}"
+# Execute the server with txAdmin enabled
+echo -e "${Text} ${BLUE}Running the FiveM server with txAdmin...${NC}"
 $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 \
 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/" \
 -- $(pwd)/alpine/opt/cfx-server/FXServer \
 +set citizen_dir="$(pwd)/alpine/opt/cfx-server/citizen" \
-+exec ${TXHOST_DATA_PATH}/server.cfg
++exec ${TXHOST_DATA_PATH}/server.cfg \
++set txAdmin 1
+
+echo -e "${Text} ${BLUE}FiveM Server with txAdmin started successfully!${NC}"
