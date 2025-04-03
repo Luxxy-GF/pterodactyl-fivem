@@ -29,14 +29,14 @@ fi
 
 echo -e "${Text} ${BLUE}Starting FiveM Server...${NC}"
 
-# Environment variables configuration (txAdmin)
-TXHOST_DATA_PATH=/home/container
-TXHOST_MAX_SLOTS=${MAX_PLAYERS}
-TXHOST_TXA_PORT=${TXADMIN_PORT}
-TXHOST_FXS_PORT=${SERVER_PORT}
-TXHOST_DEFAULT_CFXKEY=${FIVEM_LICENSE}
-TXHOST_PROVIDER_NAME=${PROVIDER_NAME}
-TXHOST_PROVIDER_LOGO=${PROVIDER_LOGO}
+# Export environment variables for txAdmin and FiveM server
+export TXHOST_DATA_PATH=/home/container
+export TXHOST_MAX_SLOTS=${MAX_PLAYERS}
+export TXHOST_TXA_PORT=${TXADMIN_PORT}
+export TXHOST_FXS_PORT=${SERVER_PORT}
+export TXHOST_DEFAULT_CFXKEY=${FIVEM_LICENSE}
+export TXHOST_PROVIDER_NAME=${PROVIDER_NAME}
+export TXHOST_PROVIDER_LOGO=${PROVIDER_LOGO}
 
 # Set the path to the correct binary location for the FiveM server
 SERVER_BIN_PATH="/home/container/alpine/opt/cfx-server/FXServer"
