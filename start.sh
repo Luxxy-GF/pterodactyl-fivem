@@ -40,5 +40,4 @@ $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 \
 +set TXHOST_DEFAULT_CFXKEY=${FIVEM_LICENSE} \
 +set TXHOST_PROVIDER_NAME=${PROVIDER_NAME} \
 +set TXHOST_PROVIDER_LOGO},${PROVIDER_LOGO} \
-+set TXHOST_DATA_PATH=/home/container \
-+exec "$[ "$TXADMIN_ENABLE" == "1" ] || printf %s\n" "$TXADMIN_ENABLE"\n +exec server.cfg
++set TXHOST_DATA_PATH=/home/container
