@@ -29,7 +29,7 @@ fi
 
 echo -e "${Text} ${BLUE}Starting FiveM Server...${NC}"
 
-
+# Environment variables configuration (txAdmin)
 TXHOST_DATA_PATH=/home/container
 TXHOST_MAX_SLOTS=${MAX_PLAYERS}
 TXHOST_TXA_PORT=${TXADMIN_PORT}
@@ -38,6 +38,19 @@ TXHOST_DEFAULT_CFXKEY=${FIVEM_LICENSE}
 TXHOST_PROVIDER_NAME=${PROVIDER_NAME}
 TXHOST_PROVIDER_LOGO=${PROVIDER_LOGO}
 
+# Set the path to the correct binary location for the FiveM server
+SERVER_BIN_PATH="/home/container/alpine/opt/cfx-server/FXServer"
+
+# If the binary does not exist, print an error message
+if [ ! -f "$SERVER_BIN_PATH" ]; then
+    echo -e "${RED}[ERROR] FiveM server binary not found at ${SERVER_BIN_PATH}${NC}"
+    exit 1
+fi
+
+# Execute the server with the necessary arguments
+echo -e "${Text} ${BLUE}Running the FiveM server...${NC}"
 $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 \
 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/" \
--- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir="$(pwd)/alpine/opt/cfx-server/citizen"
+-- $(pwd)/alpine/opt/cfx-server/FXServer \
++set citizen_dir="$(pwd)/alpine/opt/cfx-server/citizen" \
++exec ${TXHOST_DATA_PATH}/server.cfg
