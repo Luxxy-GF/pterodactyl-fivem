@@ -30,7 +30,7 @@ fi
 echo -e "${Text} ${BLUE}Starting FiveM Server...${NC}"
 
 # Export environment variables for txAdmin and FiveM server
-export TXHOST_DATA_PATH=/home/container
+export TXHOST_DATA_PATH=/home/container/txData
 export TXHOST_MAX_SLOTS=${MAX_PLAYERS}
 export TXHOST_TXA_PORT=${TXADMIN_PORT}
 export TXHOST_FXS_PORT=${SERVER_PORT}
