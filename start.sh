@@ -49,4 +49,4 @@ fi
 
 # Execute the server with txAdmin enabled
 echo -e "${Text} ${BLUE}Running the FiveM server with txAdmin...${NC}"
-$(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/" -- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir $(pwd)/alpine/opt/cfx-server/citizen/ $( [ "$TXADMIN_ENABLE" == "1" ] || printf %s '+exec server.cfg' )
+$(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/:$(pwd)/alpine/opt/cfx-server/lib/" -- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir $(pwd)/alpine/opt/cfx-server/citizen/ $( [ "$TXADMIN_ENABLE" == "1" ] || printf %s '+exec server.cfg' )
