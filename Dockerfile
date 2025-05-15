@@ -16,11 +16,6 @@ RUN apt-get update && apt upgrade -y && apt-get install -y \
     tzdata \
     && rm -rf /var/lib/apt/lists/*
 
-
-RUN useradd -m -d /app/data container
-
-USER        container
-ENV         USER=container HOME=/app/data
 WORKDIR     /app/data
 
 COPY        ./entrypoint.sh /entrypoint.sh

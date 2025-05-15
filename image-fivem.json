@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "version": "AL_V1"
+  },
+  "name": "FiveM",
+  "description": "FiveM.net airlink image",
+  "author": "me@luxxy.cloud",
+  "authorName": "AirLink Labs",
+  "docker_images": [
+    {"fivem": "ghcr.io/luxxy-gf/pterodactyl-fivem:airlink"}
+  ],
+  "startup": "./start.sh",
+  "info": {
+    "features": [],
+    "stop": "QUIT"
+  },
+  "scripts": {
+    "install": []
+  },
+  "variables": []
+}
