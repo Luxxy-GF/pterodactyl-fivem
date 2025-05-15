@@ -14,7 +14,7 @@ CHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/vers
 if [[ "${AUTO_UPDATE}" == "1" ]]; then
     DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.latest_download')
 
-    rm -rf /home/container/alpine > /dev/null 2>&1
+    rm -rf /app/data/alpine > /dev/null 2>&1
 
     echo -e "${Text} ${BLUE}Updating CitizenFX Resource Files...${NC}"
 
@@ -30,7 +30,7 @@ fi
 echo -e "${Text} ${BLUE}Starting FiveM Server...${NC}"
 
 # Export environment variables for txAdmin and FiveM server
-export TXHOST_DATA_PATH=/home/container/txData
+export TXHOST_DATA_PATH=/app/data/txData
 export TXHOST_MAX_SLOTS=${MAX_PLAYERS}
 export TXHOST_TXA_PORT=${TXADMIN_PORT}
 export TXHOST_FXS_PORT=${SERVER_PORT}
@@ -39,7 +39,7 @@ export TXHOST_PROVIDER_NAME=${PROVIDER_NAME}
 export TXHOST_PROVIDER_LOGO=${PROVIDER_LOGO}
 
 # Set the path to the correct binary location for the FiveM server
-SERVER_BIN_PATH="/home/container/alpine/opt/cfx-server/FXServer"
+SERVER_BIN_PATH="/app/data/alpine/opt/cfx-server/FXServer"
 
 # If the binary does not exist, print an error message
 if [ ! -f "$SERVER_BIN_PATH" ]; then

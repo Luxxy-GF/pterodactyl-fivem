@@ -17,11 +17,11 @@ RUN apt-get update && apt upgrade -y && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN useradd -m -d /home/container container
+RUN useradd -m -d /app/data container
 
 USER        container
-ENV         USER=container HOME=/home/container
-WORKDIR     /home/container
+ENV         USER=container HOME=/app/data
+WORKDIR     /app/data
 
 COPY        ./entrypoint.sh /entrypoint.sh
 COPY        --chmod=777 ./start.sh /start.sh

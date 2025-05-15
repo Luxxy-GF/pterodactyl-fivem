@@ -1,5 +1,5 @@
 
-name: build fivem debian egg
+name: build fivem debian egg (airlink)
 on:
   workflow_dispatch:
   schedule:
@@ -40,4 +40,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/luxxy-gf/pterodactyl-fivem:latest
+            ghcr.io/luxxy-gf/pterodactyl-fivem:airlink

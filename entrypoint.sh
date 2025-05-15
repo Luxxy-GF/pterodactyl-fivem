@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/container || exit 1
+cd /app/data || exit 1
 eval '/start.sh'
