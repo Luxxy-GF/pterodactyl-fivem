@@ -39,26 +39,6 @@ if [ ! -f "$SERVER_BIN_PATH" ]; then
     exit 1
 fi
 
-METRIC_URL="http://api.luxxysystems.com/api/metrics"
-SERVER_ID="${P_SERVER_UUID:-unknown}"
-
-(
-    while true; do
-        TIMESTAMP=$(date +%s)
-        IS_RUNNING=1
-
-        curl -s -X POST "$METRIC_URL" \
-            -H "Content-Type: application/json" \
-            -d "{
-                \"server_id\": \"${SERVER_ID}\",
-                \"is_running\": ${IS_RUNNING},
-                \"timestamp\": ${TIMESTAMP}
-            }" > /dev/null || echo "[WARN] Failed to report status for ${SERVER_ID}"
-
-        sleep 10
-    done
-) &
-
 echo -e "${Text} ${BLUE}Running the FiveM server with txAdmin...${NC}"
 $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 \
   --library-path "$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/:$(pwd)/alpine/opt/cfx-server/lib/" \
